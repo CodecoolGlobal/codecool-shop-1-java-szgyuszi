@@ -8,15 +8,12 @@ import com.codecool.shop.service.ProductService;
 import com.codecool.shop.config.TemplateEngineUtil;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.context.WebContext;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
 
 @WebServlet(urlPatterns = {"/"})
 public class ProductController extends HttpServlet {
@@ -30,15 +27,10 @@ public class ProductController extends HttpServlet {
         TemplateEngine engine = TemplateEngineUtil.getTemplateEngine(req.getServletContext());
         WebContext context = new WebContext(req, resp, req.getServletContext());
         context.setVariable("category", productService.getProductCategory(1));
-        context.setVariable("products", productService.getProductsForCategory(1));
-        context.setVariable("horror", productService.getProductsForCategory(2));
-        context.setVariable("action", productService.getProductsForCategory(3));
-        context.setVariable("comedy", productService.getProductsForCategory(4));
-        // // Alternative setting of the template context
-        // Map<String, Object> params = new HashMap<>();
-        // params.put("category", productCategoryDataStore.find(1));
-        // params.put("products", productDataStore.getBy(productCategoryDataStore.find(1)));
-        // context.setVariables(params);
+        context.setVariable("products", productService.getAllProduct());
+        //context.setVariable("horror", productService.getProductsForCategory(2));
+        //context.setVariable("action", productService.getProductsForCategory(3));
+        //context.setVariable("comedy", productService.getProductsForCategory(4));
         engine.process("product/index.html", context, resp.getWriter());
     }
 
