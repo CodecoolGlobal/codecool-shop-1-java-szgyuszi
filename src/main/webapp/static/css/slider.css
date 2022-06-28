@@ -188,3 +188,8 @@ img {
     align-items: center;
     justify-items: center;
 }
+
+.media-element:hover {
+    opacity: 0.8;
+    box-shadow: #121212 .5rem .5rem 1rem;
+}
