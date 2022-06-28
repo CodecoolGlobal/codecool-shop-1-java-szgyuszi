@@ -12,7 +12,7 @@ body {
     font-family: system-ui;
     font-size: 1.25rem;
     color: white;
-    background: #121212;
+    background: #0c0c0c;
 }
 
 svg {
@@ -34,7 +34,7 @@ img {
 
 .flow {
     display: grid;
-    gap: var(--flow-spacer, 1rem);
+
 }
 
 
@@ -70,6 +70,10 @@ img {
 .media-element {
     border-radius: 0.25rem;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
 }
 
 .media-element > img {
@@ -194,5 +198,5 @@ img {
     opacity: 0.8;
     box-shadow: #121212 .5rem .5rem 1rem;
     cursor: pointer;
-    transition: ease-in-out;
+    transition: .3s ease-in-out;
 }
