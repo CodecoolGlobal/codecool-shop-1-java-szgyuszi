@@ -29,6 +29,16 @@
 </div>
 </div>
 
+<div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span id="close" class="close">&times;</span>
+        <p>Some text in the Modal..</p>
+    </div>
+
+</div>
+
 <div class="container">
     <div class="card">
         <strong th:text="${category.name}">Category Title</strong>
@@ -47,7 +57,7 @@
                         <p class="lead" th:text="${prod.getPrice()}">100 USD</p>
                     </div>
                     <div class="card-text">
-                        <a class="btn btn-success" href="#">Add to cart</a>
+                        <a class="btn btn-success" th:id="${prod.id}">Add to cart</a>
                     </div>
                 </div>
             </div>

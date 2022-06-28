@@ -1,1 +1,3 @@
-console.log("helo")
+import {initCart} from "./cart.js";
+
+initCart()
