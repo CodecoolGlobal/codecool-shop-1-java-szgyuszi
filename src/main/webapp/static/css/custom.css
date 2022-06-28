@@ -64,7 +64,7 @@
 video {
     position: absolute;
     top: 0;
-    left: 0px;
+    left: 0;
     z-index: -10;
     object-fit: cover;
     height: 100%;
@@ -93,7 +93,12 @@ video {
 }
 
 .header{
-    position: relative;
+    position: absolute;
     color: white;
     text-shadow: 1px 1px 8px rgba(0,0,0,0.6);
+}
+.video-container {
+    display: flex;
+    justify-content: center;
+    align-content: center;
 }

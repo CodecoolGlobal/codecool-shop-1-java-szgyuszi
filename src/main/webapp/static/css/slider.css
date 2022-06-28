@@ -22,6 +22,7 @@ svg {
 img {
     max-width: 300px;
     max-height: 440px;
+    border-radius: 6px;
 }
 
 /* general styling */
@@ -192,4 +193,6 @@ img {
 .media-element:hover {
     opacity: 0.8;
     box-shadow: #121212 .5rem .5rem 1rem;
+    cursor: pointer;
+    transition: ease-in-out;
 }
