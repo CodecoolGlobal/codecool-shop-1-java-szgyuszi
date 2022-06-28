@@ -9,7 +9,7 @@
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
     <!-- End of Bootstrap components -->
-    <link rel="stylesheet" type="text/css" href="/static/css/slider.css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/custom.css" />
     <script type="module" src='/static/js/main.js' defer></script>
 </head>
 
@@ -111,66 +111,43 @@
                                 src="https://images.unsplash.com/photo-1642177584449-fa0b017dccc7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY0MzM5ODc5NQ&ixlib=rb-1.2.1&q=80&w=400"
                                 alt="">
                     </div>
+<div class="video-wrapper">
+    <video playsinline autoplay muted loop poster="">
+        <source src="/static/background-video/bgVideo.mp4" type="video/webm" loop>
+        Your browser does not support the video tag.
+    </video>
 
-                    <a class="next" href="#group-4" aria-label="next">
-                        <svg>
-                            <use href="#next"></use>
-                        </svg>
-                    </a>
+<div class="header">
+    <h1>Trailer Shop</h1>
+    <h2>Spend your money here</h2>
+</div>
+</div>
+
+<div class="container">
+    <div class="card">
+        <strong th:text="${category.name}">Category Title</strong>
+    </div>
+
+    <div id="products" class="row">
+        <div class="col col-sm-12 col-md-6 col-lg-4" th:each="prod,iterStat : ${products}">
+            <div class="card">
+                <img class="img" src="http://placehold.it/400x250/000/fff" th:attr="src='/static/img/product_' + ${prod.id} + '.jpg'" alt="" />
+                <div class="card-header">
+                    <h4 class="card-title" th:text="${prod.name}">Product name</h4>
+                    <p class="card-text" th:text="${prod.description}">Product description... </p>
                 </div>
-
-                <!--  Group 4  -->
-                <div class="media-group" id="group-4">
-                    <a class="previous" href="#group-3">
-                        <svg>
-                            <use href="#previous"></use>
-                        </svg>
-                    </a>
-                    <div class="media-element">
-                        <img th:data-id="${products[4].id}"
-                                th:attr="src='static/img/product_' + ${products[4].id} + '.jpg'"
-                                src="https://images.unsplash.com/photo-1640998483268-d1faffa789ad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY0MzM5ODkwNA&ixlib=rb-1.2.1&q=80&w=400"
-                                alt="">
+                <div class="card-body">
+                    <div class="card-text">
+                        <p class="lead" th:text="${prod.getPrice()}">100 USD</p>
                     </div>
-                    <div class="media-element">
-                        <img th:data-id="${products[0].id}"
-                                th:attr="src='static/img/product_' + ${products[0].id} + '.jpg'"
-                                src="https://images.unsplash.com/photo-1642034451735-2a8df1eaa2c0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY0MzM5ODg4OQ&ixlib=rb-1.2.1&q=80&w=400"
-                                alt="">
+                    <div class="card-text">
+                        <a class="btn btn-success" href="#">Add to cart</a>
                     </div>
-                    <div class="media-element">
-                        <img    th:data-id="${products[1].id}"
-                                th:attr="src='static/img/product_' + ${products[1].id} + '.jpg'"
-                                src="https://images.unsplash.com/photo-1640808238224-5520de93c939?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY0MzM5ODg4OQ&ixlib=rb-1.2.1&q=80&w=400"
-                                alt="">
-                    </div>
-
                 </div>
-
-                <div class="navigation-indicators">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </div>
-
             </div>
         </div>
-
-
-        <svg>
-            <symbol id="next" viewBox="0 0 256 512">
-                <path fill="white"
-                      d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z" />
-            </symbol>
-
-            <symbol id="previous" viewBox="0 0 256 512">
-                <path fill="white"
-                      d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z" />
-            </symbol>
-        </svg>
-
     </div>
+
 </div>
 
 <div th:replace="footer.html :: copy"></div>
