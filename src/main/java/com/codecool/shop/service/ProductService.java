@@ -21,8 +21,6 @@ public class ProductService{
         this.supplierDao = supplierDao;
     }
 
-
-
     public ProductCategory getProductCategory(int categoryId){
         return productCategoryDao.find(categoryId);
     }
@@ -42,6 +40,10 @@ public class ProductService{
 
     public Supplier getProductSupplierByParameter(String name){
         return supplierDao.getSupplier(name);
+    }
+
+    public Product getProductById(int id) {
+        return productDao.find(id);
     }
 
 }
