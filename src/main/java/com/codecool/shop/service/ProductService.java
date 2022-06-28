@@ -29,5 +29,8 @@ public class ProductService{
         return productDao.getAll();
     }
 
+    public ProductCategory getProductCategoryByParameter(String name){
+        return productCategoryDao.getCategory(name);
+    }
 
 }
