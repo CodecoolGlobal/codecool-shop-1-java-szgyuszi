@@ -10,7 +10,9 @@ function addEventToCards() {
     for (let card of cards) {
         card.addEventListener("click", (event)=> {
             const id = event.target.dataset.id
-            window.location.href = `/movie?id=${id}`;
+            if (id !== undefined) {
+                window.location.href = `/movie?id=${id}`;
+            }
         })
     }
 }
