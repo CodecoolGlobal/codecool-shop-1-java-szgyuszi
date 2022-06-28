@@ -40,6 +40,14 @@ public class SupplierDaoMem implements SupplierDao {
     }
 
     @Override
+    public Supplier getSupplier(String name) {
+        return data.stream()
+                .filter(supplier -> supplier.getName().equals(name))
+                .findFirst()
+                .orElse(null);
+    }
+
+    @Override
     public List<Supplier> getAll() {
         return data;
     }
