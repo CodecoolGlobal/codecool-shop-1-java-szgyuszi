@@ -60,3 +60,40 @@
     max-width: 300px;
     max-height: 350px;
 }
+
+video {
+    position: absolute;
+    top: 0;
+    left: 0px;
+    z-index: -10;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.video-wrapper {
+    /* Telling our absolute positioned video to
+    be relative to this element */
+    position: relative;
+
+    width: 1500px;
+    height: 600px;
+
+    /* Will not allow the video to overflow the
+    container */
+    overflow: hidden;
+
+    /* Centering the container's content vertically
+    and horizontally */
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 85%;
+}
+
+.header{
+    position: relative;
+    color: white;
+    text-shadow: 1px 1px 8px rgba(0,0,0,0.6);
+}

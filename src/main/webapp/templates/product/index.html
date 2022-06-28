@@ -17,6 +17,18 @@
 
 <div th:replace="navbar.html :: nav"></div>
 
+<div class="video-wrapper">
+    <video playsinline autoplay muted loop poster="">
+        <source src="/static/background-video/bgVideo.mp4" type="video/webm" loop>
+        Your browser does not support the video tag.
+    </video>
+
+<div class="header">
+    <h1>Trailer Shop</h1>
+    <h2>Spend your money here</h2>
+</div>
+</div>
+
 <div class="container">
     <div class="card">
         <strong th:text="${category.name}">Category Title</strong>
