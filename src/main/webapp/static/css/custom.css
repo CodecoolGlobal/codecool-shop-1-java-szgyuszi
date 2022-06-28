@@ -9,10 +9,6 @@
     -moz-border-radius: 0px;
     border-radius: 0px;
 }
-.thumbnail img
-{
-    margin-top: 10px;
-}
 .item.list-group-item
 {
     float: none;
@@ -60,8 +56,7 @@
 {
     margin: 0 0 11px;
 }
-.image {
+.img {
     max-width: 300px;
     max-height: 350px;
-    object-fit: contain;
 }

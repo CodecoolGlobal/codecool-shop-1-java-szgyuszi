@@ -33,4 +33,8 @@ public class ProductService{
         return productCategoryDao.getCategory(name);
     }
 
+    public Product getProductById(int id) {
+        return productDao.find(id);
+    }
+
 }
