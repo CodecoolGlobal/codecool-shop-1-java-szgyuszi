@@ -23,7 +23,6 @@ public class MoviesByGenreRout extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String category = req.getParameter("category");
-        System.out.println(category);
 
         ProductDao productDataStore = ProductDaoMem.getInstance();
         ProductCategoryDao productCategoryDataStore = ProductCategoryDaoMem.getInstance();
@@ -32,7 +31,6 @@ public class MoviesByGenreRout extends HttpServlet {
         TemplateEngine engine = TemplateEngineUtil.getTemplateEngine(req.getServletContext());
         WebContext context = new WebContext(req, resp, req.getServletContext());
         ProductCategory category1 = productService.getProductCategoryByParameter(category);
-        System.out.println(category1);
         context.setVariable("category", category1);
         context.setVariable("products", productService.getProductsForCategory(category1.getId()));
 

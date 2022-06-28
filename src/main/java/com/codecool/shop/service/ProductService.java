@@ -7,7 +7,7 @@ import com.codecool.shop.model.ProductCategory;
 
 import java.util.List;
 
-public class ProductService{
+public class    ProductService{
     private ProductDao productDao;
     private ProductCategoryDao productCategoryDao;
 

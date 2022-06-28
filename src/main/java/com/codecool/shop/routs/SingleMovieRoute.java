@@ -12,11 +12,13 @@ import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.context.WebContext;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+@WebServlet(urlPatterns = {"/movie"})
 public class SingleMovieRoute extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -32,7 +34,7 @@ public class SingleMovieRoute extends HttpServlet {
         Product movie = productService.getProductById(Integer.parseInt(id));
         System.out.println(movie);
         context.setVariable("id", movie);
-        // context.setVariable("product", productService.getProductsForCategory(movie.getId()));
+        context.setVariable("product", productService.getProductById(movie.getId()));
 
         engine.process("product/movie_page.html", context, resp.getWriter());
     }
