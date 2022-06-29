@@ -14,7 +14,9 @@
   <script type="module" src='/static/js/main.js' defer></script>
 </head>
 <body>
-<div th:replace="modal.html :: modal"></div>
+<div class="modal-container">
+  <div th:replace="modal.html :: modal"></div>
+</div>
 <div th:insert="navbar.html :: nav"></div>
 <div class="container">
 
