@@ -87,8 +87,8 @@ public class Initializer implements ServletContextListener {
                 comedy, virgin, "https://www.youtube.com/watch?v=A9fBCkwDW8c"));
         productDataStore.add(new Product("Scary Movie", new BigDecimal("7.99"), "USD", "\u200B\u200BA year after disposing of the body of a man they accidentally killed, a group of dumb teenagers are stalked by a bumbling serial killer.\n",
                 horror, wayans, "https://www.youtube.com/watch?v=HTLPULt0eJ4"));
-        /*productDataStore.add(new Product("Attack of the Killer Tomatoes!", new BigDecimal("10.99"), "USD", "A group of scientists band together to save the world from mutated killer tomatoes.",
-                action, fourSquare, "https://www.youtube.com/watch?v=txfdGlxEsG8"));*/
+        productDataStore.add(new Product("Attack of the Killer Tomatoes!", new BigDecimal("10.99"), "USD", "A group of scientists band together to save the world from mutated killer tomatoes.",
+                action, fourSquare, "https://www.youtube.com/watch?v=txfdGlxEsG8"));
 
     }
 }
