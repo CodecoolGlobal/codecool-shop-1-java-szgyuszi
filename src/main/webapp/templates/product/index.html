@@ -38,7 +38,6 @@
     <!-- Modal content -->
     <div class="modal-content">
         <span id="close" class="close">&times;</span>
-        <p>Some text in the Modal..</p>
     </div>
 
 </div>
@@ -47,9 +46,13 @@
     <div class="container-slider">
         <div th:insert="slider.html :: slider"></div>
     </div>
+
+    <h2 class="section-title">Action Movies</h2>
+    <div class="container-slider">
+        <div th:insert="slide-action.html :: slider-action"></div>
+    </div>
 </div>
 
-<div th:replace="footer.html :: copy"></div>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"

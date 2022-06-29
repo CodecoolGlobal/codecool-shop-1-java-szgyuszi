@@ -7,17 +7,18 @@
 
     <title>Codecool Shop</title>
 
-    <link rel="stylesheet" type="text/css" href="/static/css/custom.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/slider.css" />
+
     <!-- End of Bootstrap components -->
     <script src="https://kit.fontawesome.com/8d9ea205ec.js" crossorigin="anonymous"></script>
 
 
-    <script type="module" src='/static/js/main.js' defer></script>
 </head>
 <body>
 <div th:insert="navbar.html :: nav"></div>
-<div class="container">
+<div class="prod-container">
 
 
     <div id="products" class="row">
@@ -25,16 +26,18 @@
             <div class="card">
 
                 <img class="image" src="http://placehold.it/400x250/000/fff" th:attr="src='/static/img/product_' + ${prod.id} + '.jpg'" alt="" />
-                <div class="card-header">
-                    <h4 class="card-title" th:text="${prod.name}">Product name</h4>
-                    <p class="card-text" th:text="${prod.description}">Product description... </p>
-                </div>
-                <div class="card-body">
-                    <div class="card-text">
-                        <p class="lead" th:text="${prod.getPrice()}">100 USD</p>
+                <div class="prod-details">
+                    <div class="card-header">
+                        <h4 class="card-title" th:text="${prod.name}">Product name</h4>
+                        <p class="card-text" th:text="${prod.description}">Product description... </p>
                     </div>
-                    <div class="card-text">
-                        <a class="btn btn-success" href="#">Add to cart</a>
+                    <div class="card-body">
+                        <div class="card-text">
+                            <p class="lead" th:text="${prod.getPrice()}">100 USD</p>
+                        </div>
+                        <div class="card-text">
+                            <a class="btn btn-success" href="#">Add to cart</a>
+                        </div>
                     </div>
                 </div>
             </div>
