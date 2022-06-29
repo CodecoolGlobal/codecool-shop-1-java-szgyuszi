@@ -23,6 +23,13 @@ img {
     max-width: 300px;
     max-height: 440px;
     border-radius: 6px;
+
+}
+img:hover {
+    opacity: 0.8;
+    box-shadow: #121212 .5rem .5rem 1rem;
+    cursor: pointer;
+    transition: .3s ease-in-out;
 }
 
 /* general styling */
@@ -192,11 +199,4 @@ img {
     flex-direction: column;
     align-items: center;
     justify-items: center;
-}
-
-.media-element:hover {
-    opacity: 0.8;
-    box-shadow: #121212 .5rem .5rem 1rem;
-    cursor: pointer;
-    transition: .3s ease-in-out;
 }
