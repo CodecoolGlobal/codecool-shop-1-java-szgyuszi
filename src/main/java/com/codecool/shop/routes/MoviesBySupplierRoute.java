@@ -39,7 +39,7 @@ public class MoviesBySupplierRoute extends HttpServlet{
         System.out.println(supplier1);
 
         context.setVariable("supplier", supplier1);
-        context.setVariable("products", productService.getProductSupplierByParameter(supplier1.getName()));
+        context.setVariable("products", productService.getProductSupplierByParameter(supplier1.getName()).getProducts());
 
         engine.process("product/filtered_movies.html", context, resp.getWriter());
     }
