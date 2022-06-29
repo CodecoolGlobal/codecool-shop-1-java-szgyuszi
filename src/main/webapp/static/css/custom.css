@@ -223,3 +223,6 @@ h1, h2 {
 .modal-container{
     background-color: white;
 }
+#cross {
+    color: black;
+}
