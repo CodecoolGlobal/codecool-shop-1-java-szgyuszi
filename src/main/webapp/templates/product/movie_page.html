@@ -13,6 +13,7 @@
   <script type="module" src='/static/js/main.js' defer></script>
 </head>
 <body>
+<div th:replace="modal.html :: modal"></div>
 <div th:insert="navbar.html :: nav"></div>
 <div class="container">
 
@@ -33,7 +34,7 @@
             <p class="lead" th:text="${product.getPrice()}">100 USD</p>
           </div>
           <div class="card-text">
-            <a class="btn btn-success" href="#">Add to cart</a>
+            <a class="btn btn-success add-to-cart" th:id="${product.getId()}">Add to cart</a>
           </div>
         </div>
       </div>

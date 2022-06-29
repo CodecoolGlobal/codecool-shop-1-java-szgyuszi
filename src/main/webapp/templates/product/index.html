@@ -16,7 +16,7 @@
 </head>
 
 <body>
-
+<div th:replace="modal.html :: modal"></div>
 <div th:replace="navbar.html :: nav"></div>
 <div class="video-container">
     <div class="video-wrapper">
@@ -32,15 +32,7 @@
     </div>
 </div>
 
-<div id="myModal" class="modal">
 
-    <!-- Modal content -->
-    <div class="modal-content">
-        <span id="close" class="close">&times;</span>
-        <p>Some text in the Modal..</p>
-    </div>
-
-</div>
 <div class="container-media-section">
     <h2 class="section-title">So Hot Right Now!</h2>
     <div class="container-slider">
