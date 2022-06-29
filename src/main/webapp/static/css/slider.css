@@ -1,18 +1,15 @@
 * {
     margin: 0;
+    padding: 0;
+    font-family: system-ui;
+    color: white;
+    background: #0c0c0c;
 }
 
 *,
 *::before,
 *::after {
     box-sizing: border-box;
-}
-
-body {
-    font-family: system-ui;
-    font-size: 1.25rem;
-    color: white;
-    background: #0c0c0c;
 }
 
 svg {
@@ -136,8 +133,8 @@ img:hover {
     display: flex;
 }
 
-.media-scroller:has(:target:not(:first-child))
-.media-group:first-of-type
+.media-scroller:has(:target:not(:first-child)),
+.media-group:first-of-type,
 .next {
     display: none;
 }
@@ -160,8 +157,8 @@ img:hover {
     opacity: 0.5;
 }
 
-.media-scroller:has(.media-group:target)
-.navigation-indicators
+.media-scroller:has(.media-group:target),
+.navigation-indicators,
 > *:nth-child(1) {
     opacity: 0.5;
 }

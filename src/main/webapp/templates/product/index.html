@@ -12,6 +12,7 @@
     <!-- End of Bootstrap components -->
     <link rel="stylesheet" type="text/css" href="/static/css/custom.css"/>
     <link rel="stylesheet" type="text/css" href="/static/css/slider.css"/>
+    <script src="https://kit.fontawesome.com/8d9ea205ec.js" crossorigin="anonymous"></script>
     <script type="module" src='/static/js/main.js' defer></script>
 </head>
 
@@ -33,10 +34,16 @@
 </div>
 
 
+
 <div class="container-media-section">
     <h2 class="section-title">So Hot Right Now!</h2>
     <div class="container-slider">
         <div th:insert="slider.html :: slider"></div>
+    </div>
+
+    <h2 class="section-title">Action Movies</h2>
+    <div class="container-slider">
+        <div th:insert="slide-action.html :: slider-action"></div>
     </div>
 </div>
 
