@@ -25,8 +25,8 @@ function addMovieToCart(){
 
 async function initAddMovie(id){
     let product =  await getProduct(id)
-    document.querySelector('#quantity').textContent = product.price;
     cartFactory(product)
+    document.querySelector('#quantity').textContent = product.price;
 
 
 }

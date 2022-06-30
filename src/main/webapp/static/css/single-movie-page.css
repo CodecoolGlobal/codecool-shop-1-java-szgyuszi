@@ -1,0 +1,61 @@
+*,*:before, *:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #000000;
+    color: #f8f8f8;
+}
+
+img {
+    width: 30rem;
+    height: 44rem;
+    margin-right: 3rem;
+
+}
+.youtube-trailer-container {
+    width: 100%;
+    padding: 0 20vh 0 20vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+iframe {
+    width: 80%;
+    height: 40vh;
+    padding: 0;
+    border: none;
+    outline: none;
+    border-radius: 0.3rem;
+}
+.prod-container {
+    display: flex;
+    flex-direction: row;
+    height: 50vh;
+    align-content: center;
+    justify-content: center;
+
+
+}
+
+.movie-info {
+    width: 45%;
+    margin-left: 5rem;
+}
+
+.card-title {
+    font-size: 4rem;
+    margin-bottom: 2rem;
+}
+
+.product-box img {
+    width: 120px;
+    height: 180px;
+}
+.modal section {
+    background: none;
+}
+table {
+    background: #262626;
+    color: white;
+}

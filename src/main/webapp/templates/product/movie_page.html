@@ -9,7 +9,8 @@
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="/static/css/custom.css" />
-  <link rel="stylesheet" type="text/css" href="/static/css/slider.css" />
+  <link rel="stylesheet" type="text/css" href="/static/css/single-movie-page.css" />
+
   <script type="module" src='/static/js/main.js' defer></script>
 
 
@@ -21,29 +22,39 @@
 <body>
 <div th:replace="modal.html :: modal"></div>
 <div th:insert="navbar.html :: nav"></div>
+
+
+<div class="youtube-trailer-container">
+  <h1 th:text="${product.getName()}"></h1>
+  <iframe th:attr="src=${product.getTrailerURL()} + '?controls=0&autoplay=1&mute=1'" src=""></iframe>
+</div>
+
 <div class="prod-container">
 
 
 
-      <div class="card">
+
+
 
         <img class="image" src="http://placehold.it/400x250/000/fff" th:attr="src='/static/img/product_' + ${product.id} + '.jpg'" alt="" />
-        <div class="prod-details">
-          <div class="card-header">
+
+
+        <div class="movie-info">
             <h4 class="card-title" th:text="${product.name}">Product name</h4>
             <p class="card-text" th:text="${product.description}">Product description... </p>
-          </div>
-          <div class="card-body">
-            <div class="card-text">
-              <p class="lead" th:text="${product.getPrice()}">100 USD</p>
+
+            <div class="prod-price">
+              <p class="lead" th:text="${product.getPrice()}"></p>
             </div>
-            <div class="card-text">
+
+            <div class="prod-button">
               <a class="btn btn-success add-to-cart" th:id="${product.getId()}">Add to cart</a>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
+</div>
+
+
+
 
 <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
