@@ -22,11 +22,11 @@ public class AddToCartApi extends javax.servlet.http.HttpServlet {
         int movieNumber = 1;
         try {
             movieNumber = Integer.parseInt(movieId);
-        } catch (NumberFormatException e) {
+        } catch (NumberFormatException ignored) {
         }
         Product product = ProductDaoMem.getInstance().find(movieNumber);
-
-        String result = new Gson().toJson(new Movie(product.getName(), product.getPrice(), product.getId()));
+        String[] price = product.getPrice().split(" ");
+        String result = new Gson().toJson(new Movie(product.getName(), price[0], product.getId()));
         PrintWriter out = response.getWriter();
         response.setContentType("application/json");
         response.setCharacterEncoding("UTF-8");

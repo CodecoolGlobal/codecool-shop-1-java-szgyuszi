@@ -219,3 +219,10 @@ h1, h2 {
     font-size: 1.85rem;
 
 }
+
+.modal-container{
+    background-color: white;
+}
+#cross {
+    color: black;
+}

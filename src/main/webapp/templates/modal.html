@@ -7,12 +7,37 @@
 <body>
 
 <div id="myModal" class="modal" th:fragment="modal">
+    <section class="h-100 h-custom">
+        <div class="container h-100 py-5 modal-container">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col">
 
-    <!-- Modal content -->
-    <div class="modal-content">
-        <span id="close" class="close">&times;</span>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th scope="col" class="h5">Shopping Bag</th>
+                                <th scope="col">ID</th>
+                                <th scope="col">Quantity</th>
+                                <th scope="col">Price</th>
+                            </tr>
+                            <tr><span id="close" class="close">&times;</span></tr>
+                            </thead>
+                            <tbody id="table-root">
 
-    </div>
+                            </tbody>
+                        </table>
+                        <div class="modal-footer">
+                            <div class="total-price">
+                                <div>Total price: <p id="total-price"></p></div>
+                            </div>
+                            <button class="btn btn-success">CHECKOUT</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 </div>
 

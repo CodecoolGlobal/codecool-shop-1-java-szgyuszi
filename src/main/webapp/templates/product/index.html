@@ -17,12 +17,15 @@
 </head>
 
 <body>
-<div th:replace="modal.html :: modal"></div>
+<div class="modal-container">
+    <div th:replace="modal.html :: modal"></div>
+</div>
+
 <div th:replace="navbar.html :: nav"></div>
 <div class="video-container">
     <div class="video-wrapper">
         <video playsinline autoplay muted loop poster="">
-            <source src="/static/background-video/bgVideo.mp4" type="video/webm" loop>
+            <source src="/static/background-video/bgVideo.mp4" type="video/webm">
             Your browser does not support the video tag.
         </video>
 
@@ -47,7 +50,6 @@
     </div>
 </div>
 
-<div th:replace="footer.html :: copy"></div>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"
