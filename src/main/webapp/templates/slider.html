@@ -123,9 +123,41 @@
                          src=""
                          alt="">
                 </div>
+                <a class="next" href="#group-5" aria-label="next">
+                    <svg>
+                        <use href="#next"></use>
+                    </svg>
+                </a>
+            </div>
+            <!--  Group 5  -->
+            <div class="media-group" id="group-5">
+                <a class="previous" href="#group-4">
+                    <svg>
+                        <use href="#previous"></use>
+                    </svg>
+                </a>
+                <div class="media-element">
+                    <img th:data-id="${products[12].id}"
+                         th:attr="src='static/img/product_' + ${products[12].id} + '.jpg'"
+                         src=""
+                         alt="">
+                </div>
+                <div class="media-element">
+                    <img th:data-id="${products[13].id}"
+                         th:attr="src='static/img/product_' + ${products[13].id} + '.jpg'"
+                         src=""
+                         alt="">
+                </div>
+                <div class="media-element">
+                    <img th:data-id="${products[14].id}"
+                         th:attr="src='static/img/product_' + ${products[14].id} + '.jpg'"
+                         src=""
+                         alt="">
+                </div>
             </div>
 
             <div class="navigation-indicators">
+                <div></div>
                 <div></div>
                 <div></div>
                 <div></div>

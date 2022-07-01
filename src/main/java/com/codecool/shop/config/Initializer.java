@@ -51,6 +51,10 @@ public class Initializer implements ServletContextListener {
         supplierDataStore.add(wayans);
         Supplier fourSquare = new Supplier("Four Square Productions", "Digital content and services");
         supplierDataStore.add(wayans);
+        Supplier empire = new Supplier("Empire Pictures", "Digital content and services");
+        supplierDataStore.add(wayans);
+        Supplier charm = new Supplier("Charm City Productions", "Digital content and services");
+        supplierDataStore.add(wayans);
 
 
 
@@ -89,6 +93,10 @@ public class Initializer implements ServletContextListener {
                 horror, wayans, "https://www.youtube.com/watch?v=HTLPULt0eJ4"));
         productDataStore.add(new Product("Attack of the Killer Tomatoes!", new BigDecimal("10.99"), "USD", "A group of scientists band together to save the world from mutated killer tomatoes.",
                 action, fourSquare, "https://www.youtube.com/watch?v=txfdGlxEsG8"));
+        productDataStore.add(new Product("Re-Animator", new BigDecimal("7.99"), "USD", "After an odd new medical student arrives on campus, a dedicated local and his girlfriend become involved in bizarre experiments centering around the re-animation of dead tissue.",
+                horror, empire, "https://www.youtube.com/watch?v=wLJ8Z3PDEGU"));
+        productDataStore.add(new Product("Desperate Living", new BigDecimal("7.99"), "USD", "A neurotic society woman murders her husband with her maid's help; on the lam, they escape to Mortville, a homeless community ruled by a fascist queen.",
+                comedy, charm, "https://www.youtube.com/watch?v=6cLVOOW7OFM"));
 
     }
 }
