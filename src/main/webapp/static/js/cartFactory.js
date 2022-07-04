@@ -9,11 +9,11 @@ export function cartFactory({name, price, id}) {
 
 function createBlock(name, price, id) {
     return `   
-          <div class="product-box">
+          <div data-product.id="${id}" class="product-box">
+            <img src="static/img/product_${id}.jpg" alt="">
             <div class="name-box">
               <p class="mb-2">${name}</p>
             </div>
-            <p class="mb-0" style="font-weight: 500;">${id}</p>
             <input id="quantity" type="number" class="quantity" value="1">
             <p id="price" data-price="${price}" class="mb-0" style="font-weight: 500;">${price} USD</p>
           </div>

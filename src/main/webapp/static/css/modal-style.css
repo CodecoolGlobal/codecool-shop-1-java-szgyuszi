@@ -59,3 +59,10 @@ body.modal-open div.modal-backdrop {
 .product-box > p {
     margin-top: 10px;
 }
+
+.product-box > img {
+    height: 6rem;
+    width: 4rem;
+    border-radius: 2px;
+    border: 1px solid #dedcdc;
+}
