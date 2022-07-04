@@ -5,6 +5,7 @@ import com.codecool.shop.dao.ProductDao;
 import com.codecool.shop.dao.SupplierDao;
 import com.codecool.shop.dao.implementation.ProductCategoryDaoMem;
 import com.codecool.shop.dao.implementation.SupplierDaoMem;
+import com.codecool.shop.entities.Movie;
 import com.codecool.shop.model.Product;
 import com.codecool.shop.model.ProductCategory;
 import com.codecool.shop.model.Supplier;
@@ -46,12 +47,15 @@ public class ProductService{
         return productCategoryDao.getCategory(name);
     }
 
-    public Supplier getProductSupplierByParameter(String name){
+    public Supplier getProductSupplierByName(String name){
         return supplierDao.getSupplier(name);
     }
 
     public Product getProductById(int id) {
         return productDao.find(id);
+    }
+    public Product getProductById(Product movie) {
+        return getProductById(movie.getId());
     }
 
 }

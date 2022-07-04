@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="author" content="Codecool" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta charset="utf-8"/>
+    <meta name="author" content="Codecool"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
 
-  <title>Codecool Shop</title>
+    <title>Codecool Shop</title>
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="/static/css/custom.css" />
-  <link rel="stylesheet" type="text/css" href="/static/css/single-movie-page.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css"
+          integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/static/css/custom.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/css/single-movie-page.css"/>
 
-  <script type="module" src='/static/js/main.js' defer></script>
+    <script type="module" src='/static/js/cart.js' defer></script>
 
 
-  <!-- End of Bootstrap components -->
-  <script src="https://kit.fontawesome.com/8d9ea205ec.js" crossorigin="anonymous"></script>
+    <!-- End of Bootstrap components -->
+    <script src="https://kit.fontawesome.com/8d9ea205ec.js" crossorigin="anonymous"></script>
 
 
 </head>
@@ -25,40 +26,39 @@
 
 
 <div class="youtube-trailer-container">
-  <h1 th:text="${product.getName()}"></h1>
-  <iframe th:attr="src=${product.getTrailerURL()} + '?controls=0&autoplay=1&mute=1'" src=""></iframe>
+    <h1 th:text="${product.getName()}"></h1>
+    <iframe th:attr="src=${product.getTrailerURL()} + '?controls=0&autoplay=1&mute=1'" src=""></iframe>
 </div>
 
 <div class="prod-container">
 
 
+    <img class="image" src="http://placehold.it/400x250/000/fff"
+         th:attr="src='/static/img/product_' + ${product.id} + '.jpg'" alt=""/>
 
 
+    <div class="movie-info">
+        <h4 class="card-title" th:text="${product.name}">Product name</h4>
+        <p class="card-text" th:text="${product.description}">Product description... </p>
 
-
-        <img class="image" src="http://placehold.it/400x250/000/fff" th:attr="src='/static/img/product_' + ${product.id} + '.jpg'" alt="" />
-
-
-        <div class="movie-info">
-            <h4 class="card-title" th:text="${product.name}">Product name</h4>
-            <p class="card-text" th:text="${product.description}">Product description... </p>
-
-            <div class="prod-price">
-              <p class="lead" th:text="${product.getPrice()}"></p>
-            </div>
-
-            <div class="prod-button">
-              <a class="btn btn-success add-to-cart" th:id="${product.getId()}">Add to cart</a>
-            </div>
+        <div class="prod-price">
+            <p class="lead" th:text="${product.getPrice()}"></p>
         </div>
+
+        <div class="prod-button">
+            <a class="btn btn-success add-to-cart" th:id="${product.getId()}">Add to cart</a>
+        </div>
+    </div>
 </div>
 
 
-
-
-<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"
+        integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ"
+        crossorigin="anonymous"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js"
+        integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+        crossorigin="anonymous"></script>
 
 </body>
 </html>

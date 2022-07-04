@@ -1,6 +1,8 @@
 import {cartFactory} from "./cartFactory.js";
 
-export function initCart() {
+initCart();
+
+function initCart() {
     initCarte()
     addMovieToCart()
 

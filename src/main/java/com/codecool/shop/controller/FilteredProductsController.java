@@ -1,6 +1,9 @@
 package com.codecool.shop.controller;
 
 import com.codecool.shop.config.TemplateEngineUtil;
+import com.codecool.shop.dao.implementation.ProductCategoryDaoMem;
+import com.codecool.shop.dao.implementation.ProductDaoMem;
+import com.codecool.shop.dao.implementation.SupplierDaoMem;
 import com.codecool.shop.model.Supplier;
 import com.codecool.shop.service.ProductService;
 import org.thymeleaf.TemplateEngine;
@@ -17,13 +20,13 @@ public class FilteredProductsController extends HttpServlet{
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String supplier = req.getParameter("supplier");
-        ProductService productService = new ProductService();
+        String reqParameter = req.getParameter("supplier");
+        ProductService productService = new ProductService(ProductDaoMem.getInstance(), ProductCategoryDaoMem.getInstance(), SupplierDaoMem.getInstance());
         TemplateEngine engine = TemplateEngineUtil.getTemplateEngine(req.getServletContext());
         WebContext context = new WebContext(req, resp, req.getServletContext());
-        Supplier supplier1 = productService.getProductSupplierByParameter(supplier);
-        context.setVariable("supplier", supplier1);
-        context.setVariable("products", productService.getProductSupplierByParameter(supplier1.getName()).getProducts());
+        Supplier supplier = productService.getProductSupplierByName(reqParameter);
+        context.setVariable("supplier", supplier);
+        context.setVariable("products", supplier.getProducts());
         engine.process("product/filtered_movies.html", context, resp.getWriter());
     }
 

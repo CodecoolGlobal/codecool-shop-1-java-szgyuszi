@@ -1,9 +1,9 @@
-import {initCart} from "./cart.js";
+import {initSlider} from "./slider/sliderFactory.js";
 
-init();
+init()
 
-function init() {
-    initCart()
+async function init() {
+    await initSlider()
     addEventToCards()
 }
 
