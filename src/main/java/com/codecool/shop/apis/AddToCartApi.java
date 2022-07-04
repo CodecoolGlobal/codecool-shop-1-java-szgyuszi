@@ -1,17 +1,15 @@
 package com.codecool.shop.apis;
 
-import com.codecool.shop.dao.implementation.ProductDaoMem;
 import com.codecool.shop.entities.Movie;
 import com.codecool.shop.model.Product;
+import com.codecool.shop.service.ProductService;
 import com.google.gson.Gson;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
 
 @WebServlet(name = "Movie", urlPatterns = {"/api/movie"}, loadOnStartup = 0)
 public class AddToCartApi extends javax.servlet.http.HttpServlet {
@@ -24,7 +22,7 @@ public class AddToCartApi extends javax.servlet.http.HttpServlet {
             movieNumber = Integer.parseInt(movieId);
         } catch (NumberFormatException ignored) {
         }
-        Product product = ProductDaoMem.getInstance().find(movieNumber);
+        Product product = new ProductService().getProductById(movieNumber);
         String[] price = product.getPrice().split(" ");
         String result = new Gson().toJson(new Movie(product.getName(), price[0], product.getId()));
         PrintWriter out = response.getWriter();

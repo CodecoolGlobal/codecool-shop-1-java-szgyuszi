@@ -1,9 +1,9 @@
 import {initCart} from "./cart.js";
 
-initCart()
 init();
 
 function init() {
+    initCart()
     addEventToCards()
 }
 
