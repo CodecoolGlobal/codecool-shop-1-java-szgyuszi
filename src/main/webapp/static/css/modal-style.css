@@ -1,0 +1,61 @@
+body.modal-open div.modal-backdrop {
+    z-index: 0;
+}
+.modal-dialog {
+    background: none;
+}
+
+.modal-footer {
+    background-color: white;
+}
+.modal-footer > button {
+    font-size: 2rem;
+}
+.modal-button {
+    padding: 0.5rem 1.4rem;
+    border-radius: 6px;
+    outline: none;
+    border: none;
+    margin-left: 4px;
+}
+
+.modal-footer > .total-price > h4,
+.modal-footer > .total-price > h4 > span,
+.modal-content > .modal-header,
+.modal-header > .modal-title,
+.modal-body,
+.modal-header > h2 ,
+.modal-body > div {
+    background-color: white;
+    color: #121212;
+}
+
+.product-box {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.product-box > div > p,
+.product-box > div,
+.product-box > input,
+.product-box > p,
+.product-box{
+    background-color: white;
+    color: #121212;
+}
+
+.product-box > input {
+    width: 4rem;
+    border: 1px solid #dedcdc;
+    outline: none;
+    border-radius: 2px;
+}
+
+.product-box > div > p,
+.product-box > p {
+    margin-top: 10px;
+}

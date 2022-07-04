@@ -1,35 +1,23 @@
 export function cartFactory({name, price, id}) {
-    const tbody = document.querySelector('#table-root')
+    const tbody = document.querySelector('#modal-root')
     let content = createBlock(name, price, id)
     tbody.insertAdjacentHTML('beforeend', content)
-    document.querySelector('#quantity').addEventListener("click", ()=>{
+    document.querySelector('#quantity').addEventListener("click", () => {
         sumPrice(price)
     })
 }
 
 function createBlock(name, price, id) {
-    return `<tr>
-                <th scope="row">
-                  <div class="product-box">
-                    <img src="static/img/product_${id}.jpg" class="img-fluid rounded-3"
-                      style="width: 120px;" alt="">
-                    <div class="name-box">
-                      <p class="mb-2">${name}</p>
-                    </div>
-                    <td class="align-middle">
-                      <p class="mb-0" style="font-weight: 500;">${id}</p>
-                    </td>
-                    <td>
-                        <input id="quantity" type="number" class="quantity" value="1">
-                    </td>
-                    <td class="align-middle">
-                      <p id="price" data-price="${price}" class="mb-0" style="font-weight: 500;">${price} USD</p>
-                    </td>
-                    
-                  </div>
-               
-             </tr>`
-
+    return `   
+          <div class="product-box">
+            <div class="name-box">
+              <p class="mb-2">${name}</p>
+            </div>
+            <p class="mb-0" style="font-weight: 500;">${id}</p>
+            <input id="quantity" type="number" class="quantity" value="1">
+            <p id="price" data-price="${price}" class="mb-0" style="font-weight: 500;">${price} USD</p>
+          </div>
+          `
 }
 
 function sumPrice(price) {

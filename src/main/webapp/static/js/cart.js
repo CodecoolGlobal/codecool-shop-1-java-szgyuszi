@@ -3,18 +3,10 @@ import {cartFactory} from "./cartFactory.js";
 initCart();
 
 function initCart() {
-    initCarte()
     addMovieToCart()
-
 }
 
-function initCarte() {
-    const cartBtn = document.querySelector('#cart');
-    const modal = document.querySelector('#myModal');
-    cartBtn.addEventListener("click", () => modal.style.display = "block");
-    const closeBtn = document.querySelector('#close');
-    closeBtn.addEventListener("click", () => modal.style.display = "none")
-}
+
 
 function addMovieToCart(){
     const addButtons = document.querySelectorAll('.add-to-cart')
@@ -26,9 +18,10 @@ function addMovieToCart(){
 
 
 async function initAddMovie(id){
+    document.querySelector('#place-holder').innerHTML = "";
     let product =  await getProduct(id)
     cartFactory(product)
-    document.querySelector('#quantity').textContent = product.price;
+    document.querySelector('#total-price').textContent = product.price + ' USD';
 
 
 }

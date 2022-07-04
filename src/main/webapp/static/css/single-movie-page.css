@@ -47,15 +47,3 @@ iframe {
     font-size: 4rem;
     margin-bottom: 2rem;
 }
-
-.product-box img {
-    width: 120px;
-    height: 180px;
-}
-.modal section {
-    background: none;
-}
-table {
-    background: #262626;
-    color: white;
-}
