@@ -17,9 +17,9 @@ function createSlider(products) {
     let firstIndex = 0;
     let endIndex = 3;
     const numberOfGroups = products.length / 3;
-    for (let i = 0; i < numberOfGroups; i++) {
+    for (let index = 0; index < numberOfGroups; index++) {
         let productsInGroup = products.slice(firstIndex, endIndex)
-        const group = createGroup(productsInGroup, i+1, numberOfGroups);
+        const group = createGroup(productsInGroup, index+1, numberOfGroups);
         root.insertAdjacentHTML('beforeend', group)
         firstIndex = endIndex;
         endIndex += 3;

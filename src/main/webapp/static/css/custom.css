@@ -226,3 +226,16 @@ h1, h2 {
 #cross {
     color: black;
 }
+
+.badge {
+    position: absolute;
+    top: 5px;
+    right: -1px;
+    padding: 4px 8px;
+    border-radius: 50%;
+    background-color: red;
+    color: white;
+}
+.shopping-cart {
+    cursor: pointer;
+}
