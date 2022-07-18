@@ -36,7 +36,6 @@ function addEventToCart() {
     const cartButton = document.querySelector('#cart');
     cartButton.addEventListener('click', () => {
         const product = JSON.parse(window.localStorage.getItem('product'))
-        console.log(product)
         if (product !== null) {
             cartFactory(product)
         }
