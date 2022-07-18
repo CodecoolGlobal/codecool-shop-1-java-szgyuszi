@@ -13,7 +13,10 @@ function initAddToCart(){
     const addButtons = document.querySelectorAll('.add-to-cart')
     for (let button of addButtons){
         let buttonId = button.id
-        button.addEventListener("click", ()=> initAddMovie(buttonId))
+        button.addEventListener("click", ()=> {
+            initAddMovie(buttonId)
+        })
+        modifyCartBadge(button)
     }
 }
 
@@ -63,4 +66,12 @@ function addEventToClosingModal(product) {
 
     cancelButton.addEventListener("click", () =>
         saveProductDetailsToMemory(product));
+}
+
+function modifyCartBadge(button) {
+    button.addEventListener("click", ()=> {
+        const badge = document.querySelector('#s-c-badge');
+        const badgeContent = parseInt(document.querySelector('#s-c-badge').textContent);
+        badge.textContent = `${badgeContent+1}`
+    })
 }
