@@ -55,6 +55,11 @@ ALTER TABLE ONLY "movie"
     ADD CONSTRAINT fk_category_id FOREIGN KEY (category_id) REFERENCES "category" (id),
     ADD CONSTRAINT fk_supplier_id FOREIGN KEY (supplier_id) REFERENCES "supplier" (id);
 
+INSERT INTO category VALUES (1, 'horror');
+INSERT INTO category VALUES (2, 'action');
+INSERT INTO category VALUES (3, 'comedy');
+
+
 INSERT INTO movie VALUES (1, 'Legally Blonde', 'https://www.youtube.com/embed/vWOHwI_FgAo', 9.99, 'Elle Woods, a sorority girl who attempts to win back her ex-boyfriend Warner Huntington III by getting a Juris Doctor degree at Harvard Law School, and in the process, overcomes stereotypes against blondes and triumphs as a successful lawyer through unflappable self-confidence and fashion/beauty knowhow',
                           'src/main/webapp/static/img/product_1.jpg', 1, 1);
 INSERT INTO movie VALUES (2, 'Troll 2', 'https://www.youtube.com/embed/CkNB0w1fYKk', 5.99, 'The plot concerns a family pursued by vegetarian goblins who seek to transform them into plants so that they can eat them.',
