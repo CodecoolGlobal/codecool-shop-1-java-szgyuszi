@@ -81,8 +81,12 @@ INSERT INTO movie VALUES (3, 'Gremlins', 'https://www.youtube.com/embed/WeNVftie
                           'src/main/webapp/static/img/product_3.jpg', 1, 3);
 INSERT INTO movie VALUES (4, 'Tropic Thunder', 'https://www.youtube.com/embed/ASJvlHExnMA', 12.99, 'The film stars Stiller, Jack Black, Robert Downey Jr., Jay Baruchel, and Brandon T. Jackson as a group of prima donna actors making a Vietnam War film. When their frustrated director (Steve Coogan) drops them in the middle of a jungle, they are forced to rely on their acting skills to survive the real action and danger.',
                           'src/main/webapp/static/img/product_4.jpg', 2, 4);
-INSERT INTO movie VALUES (5, 'The Room', 10.99, 'https://www.youtube.com/embed/9-dIdFXeFhs', 'Johnny is a successful bank executive who lives quietly in a San Francisco townhouse with his fiancée, Lisa. One day, putting aside any scruple, she seduces Johnnys best friend, Mark. From there, nothing will be the same again.',
+INSERT INTO movie VALUES (5, 'The Room', 'https://www.youtube.com/embed/9-dIdFXeFhs', 10.99, 'Johnny is a successful bank executive who lives quietly in a San Francisco townhouse with his fiancée, Lisa. One day, putting aside any scruple, she seduces Johnnys best friend, Mark. From there, nothing will be the same again.',
                           'src/main/webapp/static/img/product_5.jpg', 3, 5);
-INSERT INTO movie VALUES (6, 'Abraham Lincoln  : Vampire Hunter', 7.99, 'https://www.youtube.com/embed/wZp7eBStN1U', 'Abraham Lincoln, the 16th President of the United States, discovers vampires are planning to take over the United States. He makes it his mission to eliminate them.',
-                          'src/main/webapp/static/img/product_4.jpg', 2, 6);
+INSERT INTO movie VALUES (6, 'Abraham Lincoln  : Vampire Hunter', 'https://www.youtube.com/embed/wZp7eBStN1U', 7.99, 'Abraham Lincoln, the 16th President of the United States, discovers vampires are planning to take over the United States. He makes it his mission to eliminate them.',
+                          'src/main/webapp/static/img/product_6.jpg', 2, 6);
+INSERT INTO movie VALUES (7, 'Spaceballs', 'https://www.youtube.com/embed/jhb1--ibhFE', 5.99, 'A star-pilot for hire and his trusty sidekick must come to the rescue of a princess and save Planet Druidia from the clutches of the evil Spaceballs.',
+                   'src/main/webapp/static/img/product_7.jpg', 2, 7);
+INSERT INTO movie VALUES (8, 'Sharknado', 'https://www.youtube.com/embed/M-pXDoe5a0E', 10.99, 'When a freak hurricane swamps Los Angeles, natures deadliest killer rules sea, land, and air as thousands of sharks terrorize the waterlogged populace.',
+                   'src/main/webapp/static/img/product_6.jpg', 3, 8);
 
