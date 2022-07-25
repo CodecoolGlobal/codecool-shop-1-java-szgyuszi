@@ -75,5 +75,13 @@ INSERT INTO movie VALUES (6, 'Abraham Lincoln  : Vampire Hunter', 'https://www.y
 INSERT INTO movie VALUES (7, 'Spaceballs', 'https://www.youtube.com/embed/jhb1--ibhFE', 5.99, 'A star-pilot for hire and his trusty sidekick must come to the rescue of a princess and save Planet Druidia from the clutches of the evil Spaceballs.',
                    'src/main/webapp/static/img/product_7.jpg', 2, 7);
 INSERT INTO movie VALUES (8, 'Sharknado', 'https://www.youtube.com/embed/M-pXDoe5a0E', 10.99, 'When a freak hurricane swamps Los Angeles, natures deadliest killer rules sea, land, and air as thousands of sharks terrorize the waterlogged populace.',
-                   'src/main/webapp/static/img/product_6.jpg', 3, 8);
+                   'src/main/webapp/static/img/product_8.jpg', 3, 8);
+INSERT INTO movie VALUES (9, 'Pineapple Express', 'https://www.youtube.com/embed/BWZt4v6b1hI', 12.99, 'A process server and his marijuana dealer wind up on the run from hitmen and a corrupt police officer after he witnesses his dealer s boss murder a competitor while trying to serve papers on him.',
+                          'src/main/webapp/static/img/product_9.jpg', 3, 9);
+INSERT INTO movie VALUES (10, 'White Chicks', 'https://www.youtube.com/embed/aeVkbNka9HM', 7.99, 'Two disgraced FBI agents go way undercover in an effort to protect hotel heiresses the Wilson sisters from a kidnapping plot.',
+                          'src/main/webapp/static/img/product_10.jpg', 2, 10);
+INSERT INTO movie VALUES (11, 'Movie 43', 'https://www.youtube.com/embed/A9fBCkwDW8c', 10.99, 'A series of interconnected short films follows a washed-up producer as he pitches insane story lines featuring some of the biggest stars in Hollywood"',
+                          'src/main/webapp/static/img/product_11.jpg', 1, 11);
+INSERT INTO movie VALUES (12, 'Scary Movie', 'https://www.youtube.com/embed/HTLPULt0eJ4', 7.99, 'A year after disposing of the body of a man they accidentally killed, a group of dumb teenagers are stalked by a bumbling serial killer.',
+                   'src/main/webapp/static/img/product_9.jpg', 1, 12);
 
