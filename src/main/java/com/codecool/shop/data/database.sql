@@ -59,6 +59,19 @@ INSERT INTO category VALUES (1, 'horror');
 INSERT INTO category VALUES (2, 'action');
 INSERT INTO category VALUES (3, 'comedy');
 
+INSERT INTO supplier VALUES (1, 'MGM Distribution Co.');
+INSERT INTO supplier VALUES (2, 'Filmirage');
+INSERT INTO supplier VALUES (3, 'Warner Brothers.');
+INSERT INTO supplier VALUES (4, 'DreamWorks Pictures');
+INSERT INTO supplier VALUES (5, 'Tommy Wiseau');
+INSERT INTO supplier VALUES (6, 'Tim Burton Productions');
+INSERT INTO supplier VALUES (7, 'Metro-Goldwyn-Mayer');
+INSERT INTO supplier VALUES (8, 'Southward Films');
+INSERT INTO supplier VALUES (9, 'Columbia Pictures');
+INSERT INTO supplier VALUES (10, 'Revolution Studios');
+INSERT INTO supplier VALUES (11, 'Virgin Produced');
+INSERT INTO supplier VALUES (12, 'Wayans Bros. EntertainmentGold');
+
 
 INSERT INTO movie VALUES (1, 'Legally Blonde', 'https://www.youtube.com/embed/vWOHwI_FgAo', 9.99, 'Elle Woods, a sorority girl who attempts to win back her ex-boyfriend Warner Huntington III by getting a Juris Doctor degree at Harvard Law School, and in the process, overcomes stereotypes against blondes and triumphs as a successful lawyer through unflappable self-confidence and fashion/beauty knowhow',
                           'src/main/webapp/static/img/product_1.jpg', 1, 1);
