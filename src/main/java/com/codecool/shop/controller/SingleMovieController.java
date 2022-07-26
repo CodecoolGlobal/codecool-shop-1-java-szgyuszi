@@ -6,7 +6,6 @@ import com.codecool.shop.model.Product;
 import com.codecool.shop.service.ProductService;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.context.WebContext;
-import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -16,7 +15,7 @@ import java.io.IOException;
 @WebServlet(urlPatterns = {"/movie"})
 public class SingleMovieController extends HttpServlet {
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         String id = req.getParameter("id");
         ProductService productService = new ProductService(DatabaseManager.getInstance());
         TemplateEngine engine = TemplateEngineUtil.getTemplateEngine(req.getServletContext());
