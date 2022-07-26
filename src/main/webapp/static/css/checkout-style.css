@@ -47,14 +47,6 @@ label {
     display: block;
 }
 
-.show-modal{
-    display: block;
-}
-
-.hide-modal{
-    display: none;
-}
-
 .icon-container {
     margin-bottom: 20px;
     padding: 7px 0;

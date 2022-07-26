@@ -76,23 +76,3 @@ function modifyCartBadge(button) {
         badge.textContent = `${badgeContent+1}`
     })
 }
-
-function addEventToCheckout() {
-    const checkoutBtn = document.querySelector("#checkout-btn")
-    const checkoutCross = document.querySelector("#cross-checkout")
-    const checkoutModal = document.querySelector("#checkout-modal")
-    checkoutBtn.addEventListener("click", () => showCheckoutModal(checkoutModal))
-    checkoutCross.addEventListener("click", () => hideCheckoutModal(checkoutModal))
-}
-
-function showCheckoutModal(modal){
-    modal.classList.remove("hide-modal")
-    modal.classList.add("show-modal")
-}
-
-function hideCheckoutModal(modal){
-    modal.classList.remove("show-modal")
-    modal.classList.add("hide-modal")
-}
-
-
