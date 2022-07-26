@@ -1,5 +1,6 @@
 package com.codecool.shop.dao;
 
+import com.codecool.shop.config.ReadConfig;
 import com.codecool.shop.dao.implementation.ProductCategoryDaoMem;
 import com.codecool.shop.dao.implementation.ProductDaoMem;
 import com.codecool.shop.dao.implementation.SupplierDaoMem;
@@ -9,6 +10,7 @@ import com.codecool.shop.model.Supplier;
 import org.postgresql.ds.PGSimpleDataSource;
 
 import javax.sql.DataSource;
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -24,18 +26,20 @@ public class DatabaseManager {
 
     }
 
-    public void setup() throws SQLException {
+    public void setup() throws SQLException, IOException {
         DataSource dataSource = connect();
         productDao = new ProductDaoMem(dataSource);
         productCategoryDao = new ProductCategoryDaoMem(dataSource);
         supplierDao = new SupplierDaoMem(dataSource);
     }
 
-    private DataSource connect() throws SQLException {
+    private DataSource connect() throws SQLException, IOException {
         PGSimpleDataSource dataSource = new PGSimpleDataSource();
-        String dbName = "codecoolshop";
-        String user = "cula";
-        String password = "dudidudi12";
+        ReadConfig readConfig = new ReadConfig();
+        readConfig.connect();
+        String dbName = ReadConfig.getDbName();
+        String user = ReadConfig.user();
+        String password = ReadConfig.password();
 
         dataSource.setDatabaseName(dbName);
         dataSource.setUser(user);
@@ -67,7 +71,6 @@ public class DatabaseManager {
     }
 
     public Product getProductById(int id) {
-        System.out.println("bejjebb");
         return productDao.find(id);
     }
 

@@ -14,6 +14,7 @@ import com.codecool.shop.model.Supplier;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
+import java.io.IOException;
 import java.math.BigDecimal;
 import java.sql.SQLException;
 
@@ -24,7 +25,7 @@ public class Initializer implements ServletContextListener {
     public void contextInitialized(ServletContextEvent sce) {
         try {
             DatabaseManager.getInstance().setup();
-        } catch (SQLException e) {
+        } catch (SQLException | IOException e) {
             throw new RuntimeException(e);
         }
     }
