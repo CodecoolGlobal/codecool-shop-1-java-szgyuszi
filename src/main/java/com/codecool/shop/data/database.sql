@@ -3,6 +3,8 @@ DROP TABLE IF EXISTS "user" CASCADE;
 DROP TABLE IF EXISTS "order" CASCADE;
 DROP TABLE IF EXISTS supplier CASCADE;
 DROP TABLE IF EXISTS movie CASCADE;
+DROP TABLE IF EXISTS orders_movies CASCADE;
+
 CREATE TABLE category
 (
     id    SERIAL PRIMARY KEY,
@@ -10,20 +12,24 @@ CREATE TABLE category
 );
 CREATE TABLE "user"
 (
-    id       SERIAL PRIMARY KEY,
-    name     VARCHAR NOT NULL,
-    email    VARCHAR NOT NULL,
-    order_id INT     NOT NULL
+    id    SERIAL PRIMARY KEY,
+    name  VARCHAR NOT NULL,
+    email VARCHAR NOT NULL
 
 );
 
 CREATE TABLE "order"
 (
-    id         SERIAL PRIMARY KEY,
-    user_id    INT     NOT NULL,
-    movie_name VARCHAR NOT NULL,
-    price      INT     NOT NULL
+    id       SERIAL PRIMARY KEY,
+    user_id  INT     NOT NULL,
+    price    INT     NOT NULL
 
+);
+
+CREATE TABLE "orders_movies"
+(
+    order_id INT NOT NULL,
+    movie_id INT NOT NULL
 );
 
 CREATE TABLE supplier
@@ -45,8 +51,10 @@ CREATE TABLE movie
     supplier_id INT              NOT NULL
 
 );
-ALTER TABLE ONLY "user"
-    ADD CONSTRAINT fk_order_id FOREIGN KEY (order_id) REFERENCES "order" (id);
+
+ALTER TABLE ONLY orders_movies
+    ADD CONSTRAINT fk_order_id FOREIGN KEY (order_id) REFERENCES "order"(id),
+    ADD CONSTRAINT fk_movie_id FOREIGN KEY (movie_id) REFERENCES "movie"(id);
 
 ALTER TABLE ONLY "order"
     ADD CONSTRAINT fk_user_id FOREIGN KEY (user_id) REFERENCES "user" (id);

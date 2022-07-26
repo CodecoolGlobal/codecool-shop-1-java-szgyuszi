@@ -1,11 +1,6 @@
 package com.codecool.shop.service;
 
-import com.codecool.shop.dao.ProductCategoryDao;
-import com.codecool.shop.dao.ProductDao;
-import com.codecool.shop.dao.SupplierDao;
-import com.codecool.shop.dao.implementation.ProductCategoryDaoMem;
-import com.codecool.shop.dao.implementation.SupplierDaoMem;
-import com.codecool.shop.entities.Movie;
+import com.codecool.shop.dao.DatabaseManager;
 import com.codecool.shop.model.Product;
 import com.codecool.shop.model.ProductCategory;
 import com.codecool.shop.model.Supplier;
@@ -14,46 +9,31 @@ import java.util.List;
 
 public class ProductService{
 
-    private SupplierDao supplierDao;
-    private ProductDao productDao;
-    private ProductCategoryDao productCategoryDao;
+    private final DatabaseManager databaseManager;
 
-    public ProductService(ProductDao productDao, ProductCategoryDao productCategoryDao, SupplierDao supplierDao) {
-        this.productDao = productDao;
-        this.productCategoryDao = productCategoryDao;
-        this.supplierDao = supplierDao;
-    }
 
-    public ProductService() {
-        supplierDao = SupplierDaoMem.getInstance();
-        productCategoryDao = ProductCategoryDaoMem.getInstance();
-        supplierDao = SupplierDaoMem.getInstance();
+
+    public ProductService(DatabaseManager databaseManager) {
+        this.databaseManager = databaseManager;
     }
 
     public ProductCategory getProductCategory(int categoryId){
-        return productCategoryDao.find(categoryId);
-    }
-
-    public List<Product> getProductsForCategory(int categoryId){
-        var category = productCategoryDao.find(categoryId);
-        return productDao.getBy(category);
+        return databaseManager.getProductCategoryById(categoryId);
     }
 
     public List<Product> getAllProduct() {
-        return productDao.getAll();
-    }
-
-    public ProductCategory getProductCategoryByParameter(String name){
-        return productCategoryDao.getCategory(name);
+        return databaseManager.getAllProducts();
     }
 
     public Supplier getProductSupplierByName(String name){
-        return supplierDao.getSupplier(name);
+        return databaseManager.getProductSupplierByName(name);
     }
 
     public Product getProductById(int id) {
-        return productDao.find(id);
+        System.out.println("bemegy");
+        return databaseManager.getProductById(id);
     }
+
     public Product getProductById(Product movie) {
         return getProductById(movie.getId());
     }
