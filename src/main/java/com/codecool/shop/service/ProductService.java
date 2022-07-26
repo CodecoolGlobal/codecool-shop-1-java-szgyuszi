@@ -30,6 +30,7 @@ public class ProductService{
     }
 
     public Product getProductById(int id) {
+        System.out.println("bemegy");
         return databaseManager.getProductById(id);
     }
 

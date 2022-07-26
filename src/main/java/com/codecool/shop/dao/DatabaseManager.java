@@ -33,7 +33,7 @@ public class DatabaseManager {
 
     private DataSource connect() throws SQLException {
         PGSimpleDataSource dataSource = new PGSimpleDataSource();
-        String dbName = "dungeon";
+        String dbName = "codecoolshop";
         String user = "cula";
         String password = "dudidudi12";
 
@@ -67,6 +67,7 @@ public class DatabaseManager {
     }
 
     public Product getProductById(int id) {
+        System.out.println("bejjebb");
         return productDao.find(id);
     }
 
