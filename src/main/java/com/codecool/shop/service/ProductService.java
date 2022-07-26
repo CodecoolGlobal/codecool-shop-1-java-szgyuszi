@@ -1,5 +1,6 @@
 package com.codecool.shop.service;
 
+import com.codecool.shop.dao.DatabaseManager;
 import com.codecool.shop.dao.ProductCategoryDao;
 import com.codecool.shop.dao.ProductDao;
 import com.codecool.shop.dao.SupplierDao;
@@ -18,16 +19,16 @@ public class ProductService{
     private ProductDao productDao;
     private ProductCategoryDao productCategoryDao;
 
+    private DatabaseManager databaseManager;
+
     public ProductService(ProductDao productDao, ProductCategoryDao productCategoryDao, SupplierDao supplierDao) {
         this.productDao = productDao;
         this.productCategoryDao = productCategoryDao;
         this.supplierDao = supplierDao;
     }
 
-    public ProductService() {
-        supplierDao = SupplierDaoMem.getInstance();
-        productCategoryDao = ProductCategoryDaoMem.getInstance();
-        supplierDao = SupplierDaoMem.getInstance();
+    public ProductService(DatabaseManager databaseManager) {
+        this.databaseManager = databaseManager;
     }
 
     public ProductCategory getProductCategory(int categoryId){
