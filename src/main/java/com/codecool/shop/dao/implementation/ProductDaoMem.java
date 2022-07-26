@@ -33,7 +33,7 @@ public class ProductDaoMem implements ProductDao {
     @Override
     public Product find(int id) {
         try (Connection conn = dataSource.getConnection()) {
-            String sql = "SELECT movie.id, movie.name,  url,  price,  description,  img,  c.genre,  s.name FROM movie    JOIN category c on c.id = movie.category_id    JOIN supplier s on s.id = movie.supplier_id WHERE movie.id = ?";
+            String sql = "SELECT movie.id, movie.name, url, price, description, img, c.genre, s.name FROM movie JOIN category c on c.id = movie.category_id JOIN supplier s on s.id = movie.supplier_id WHERE movie.id = ?";
             PreparedStatement st = conn.prepareStatement(sql);
             st.setInt(1, id);
             ResultSet rs = st.executeQuery();
