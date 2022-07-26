@@ -15,46 +15,34 @@ import java.util.List;
 
 public class ProductService{
 
-    private SupplierDao supplierDao;
-    private ProductDao productDao;
-    private ProductCategoryDao productCategoryDao;
+    private final DatabaseManager databaseManager;
 
-    private DatabaseManager databaseManager;
 
-    public ProductService(ProductDao productDao, ProductCategoryDao productCategoryDao, SupplierDao supplierDao) {
-        this.productDao = productDao;
-        this.productCategoryDao = productCategoryDao;
-        this.supplierDao = supplierDao;
-    }
 
     public ProductService(DatabaseManager databaseManager) {
         this.databaseManager = databaseManager;
     }
 
     public ProductCategory getProductCategory(int categoryId){
-        return productCategoryDao.find(categoryId);
+        return databaseManager.getProductCategoryById(categoryId);
     }
 
     public List<Product> getProductsForCategory(int categoryId){
-        var category = productCategoryDao.find(categoryId);
-        return productDao.getBy(category);
+        return databaseManager.getProductsForCategoryById(categoryId);
     }
 
     public List<Product> getAllProduct() {
-        return productDao.getAll();
-    }
-
-    public ProductCategory getProductCategoryByParameter(String name){
-        return productCategoryDao.getCategory(name);
+        return databaseManager.getAllProducts();
     }
 
     public Supplier getProductSupplierByName(String name){
-        return supplierDao.getSupplier(name);
+        return databaseManager.getProductSupplierByName(name);
     }
 
     public Product getProductById(int id) {
-        return productDao.find(id);
+        return databaseManager.getProductById(id);
     }
+
     public Product getProductById(Product movie) {
         return getProductById(movie.getId());
     }
