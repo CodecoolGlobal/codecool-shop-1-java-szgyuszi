@@ -11,13 +11,16 @@ public class Product extends BaseModel {
     private Supplier supplier;
     private String trailerURL;
 
+    private String imgPath;
 
-    public Product(String name, BigDecimal defaultPrice, String currencyString, String description, ProductCategory productCategory, Supplier supplier, String trailerURL) {
-        super(name, description);
+
+    public Product(int id, String name, BigDecimal defaultPrice, String currencyString, String description, ProductCategory productCategory, Supplier supplier, String trailerURL, String imgPath) {
+        super(id, name, description);
         this.setPrice(defaultPrice, currencyString);
         this.setSupplier(supplier);
         this.setProductCategory(productCategory);
         this.setTrailerURL(trailerURL);
+        this.imgPath = imgPath;
     }
 
     public BigDecimal getDefaultPrice() {

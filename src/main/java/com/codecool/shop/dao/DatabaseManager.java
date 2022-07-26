@@ -59,10 +59,6 @@ public class DatabaseManager {
         return productCategoryDao.find(categoryId);
     }
 
-    public List<Product> getProductsForCategoryById(int categoryId){
-        var category = productCategoryDao.find(categoryId);
-        return productDao.getBy(category);
-    }
     public List<Product> getAllProducts() {
         return productDao.getAll();
     }

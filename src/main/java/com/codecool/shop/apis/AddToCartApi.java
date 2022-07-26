@@ -1,13 +1,10 @@
 package com.codecool.shop.apis;
 
-import com.codecool.shop.dao.implementation.ProductCategoryDaoMem;
-import com.codecool.shop.dao.implementation.ProductDaoMem;
-import com.codecool.shop.dao.implementation.SupplierDaoMem;
+import com.codecool.shop.dao.DatabaseManager;
 import com.codecool.shop.entities.Movie;
 import com.codecool.shop.model.Product;
 import com.codecool.shop.service.ProductService;
 import com.google.gson.Gson;
-import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -25,9 +22,10 @@ public class AddToCartApi extends javax.servlet.http.HttpServlet {
             movieNumber = Integer.parseInt(movieId);
         } catch (NumberFormatException ignored) {
         }
-        Product product = new ProductService(ProductDaoMem.getInstance(), ProductCategoryDaoMem.getInstance(), SupplierDaoMem.getInstance()).getProductById(movieNumber);
-        String[] price = product.getPrice().split(" ");
-        String result = new Gson().toJson(new Movie(product.getName(), price[0], product.getId()));
+        ProductService productService = new ProductService(DatabaseManager.getInstance());
+        Product productById = productService.getProductById(movieNumber);
+        String[] price = productById.getPrice().split(" ");
+        String result = new Gson().toJson(new Movie(productById.getName(), price[0], productById.getId()));
         PrintWriter out = response.getWriter();
         response.setContentType("application/json");
         response.setCharacterEncoding("UTF-8");
