@@ -38,4 +38,8 @@ public class ProductService{
         return getProductById(movie.getId());
     }
 
+    public List<Product> getAllProductByCategory(int id) {
+        return databaseManager.getAllProductByCategory(id);
+    }
+
 }

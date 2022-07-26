@@ -139,9 +139,9 @@ VALUES (10, 'White Chicks', 'https://www.youtube.com/embed/aeVkbNka9HM', 7.99,
 INSERT INTO movie
 VALUES (11, 'Movie 43', 'https://www.youtube.com/embed/A9fBCkwDW8c', 10.99,
         'A series of interconnected short films follows a washed-up producer as he pitches insane story lines featuring some of the biggest stars in Hollywood"',
-        'src/main/webapp/static/img/product_11.jpg', 1, 11);
+        'src/main/webapp/static/img/product_11.jpg', 3, 11);
 INSERT INTO movie
 VALUES (12, 'Scary Movie', 'https://www.youtube.com/embed/HTLPULt0eJ4', 7.99,
         'A year after disposing of the body of a man they accidentally killed, a group of dumb teenagers are stalked by a bumbling serial killer.',
-        'src/main/webapp/static/img/product_9.jpg', 1, 12);
+        'src/main/webapp/static/img/product_9.jpg', 3, 12);
 
