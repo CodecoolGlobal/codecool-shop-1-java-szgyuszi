@@ -8,6 +8,7 @@ import com.codecool.shop.model.Supplier;
 import javax.sql.DataSource;
 import java.math.BigDecimal;
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ProductDaoMem implements ProductDao {
@@ -61,7 +62,28 @@ public class ProductDaoMem implements ProductDao {
 
     @Override
     public List<Product> getAll() {
-        return null;
+        try (Connection conn = dataSource.getConnection()) {
+            String sql = "SELECT movie.id, movie.name, url, price, description, img, c.genre, s.name FROM movie JOIN category c on c.id = movie.category_id JOIN supplier s on s.id = movie.supplier_id";
+            PreparedStatement st = conn.prepareStatement(sql);
+            List<Product> products = new ArrayList<>();
+            ResultSet rs = st.executeQuery();
+            while (rs.next()) {
+                int movieId = rs.getInt(1);
+                String name = rs.getString(2);
+                String trailer = rs.getString(3);
+                double defaultPrice = rs.getDouble(4);
+                String description = rs.getString(5);
+                String img = rs.getString(6);
+                ProductCategory category = new ProductCategory(rs.getString(7));
+                Supplier supplier = new Supplier(rs.getString(8));
+                String currency = "USD";
+                products.add(new Product(movieId, name, new BigDecimal(defaultPrice), currency, description, category, supplier, trailer, img));
+            }
+            return products;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
     }
 
     @Override

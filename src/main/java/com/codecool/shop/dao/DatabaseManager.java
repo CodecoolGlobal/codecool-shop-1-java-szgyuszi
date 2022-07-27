@@ -74,5 +74,9 @@ public class DatabaseManager {
         return productDao.find(id);
     }
 
+    public List<Product> getAllProductByCategory(int id) {
+        return productCategoryDao.getAllProductByCategory(id);
+    }
 
-}
+
+    }
