@@ -2,17 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Checkout</title>
-
+    <title>Trailer Shop | Checkout</title>
     <link rel="stylesheet" type="text/css" href="/static/css/checkout-style.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css"
+          integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/8d9ea205ec.js" crossorigin="anonymous"></script>
 
 </head>
 <body>
 <div class="row modal" id="checkout-modal" >
     <div class="col-75">
         <div class="container">
-            <form action="/action_page.php">
-
+            <form action="/#">
                 <div class="row">
                     <div class="col-50">
                         <h3>Billing Address</h3>
@@ -68,13 +69,12 @@
 
 
                 </div>
-                <label>
-                    <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
-                </label>
-                <input type="submit" value="Continue to checkout" class="btn">
+
+                <input type="submit" value="Buy" class="btn">
             </form>
         </div>
     </div>
+</div>
 
 </body>
 </html>
