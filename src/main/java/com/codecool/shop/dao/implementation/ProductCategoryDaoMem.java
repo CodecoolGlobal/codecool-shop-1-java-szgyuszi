@@ -63,7 +63,8 @@ public class ProductCategoryDaoMem implements ProductCategoryDao {
             ResultSet rs = st.executeQuery();
             List<Product> products = new ArrayList<>();
             while (rs.next()) {
-                products.add(new Product(rs.getInt(3),
+                products.add
+                        (new Product(rs.getInt(3),
                         rs.getString(4),
                         BigDecimal.valueOf(rs.getDouble(6)),
                         "USD",
