@@ -239,3 +239,11 @@ h1, h2 {
 .shopping-cart {
     cursor: pointer;
 }
+
+.modal-footer > button > a {
+    text-decoration: none;
+}
+
+.modal-footer > button > a:hover{
+    color: #dedcdc;
+}
