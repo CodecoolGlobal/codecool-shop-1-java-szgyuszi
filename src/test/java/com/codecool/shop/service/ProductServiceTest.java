@@ -19,7 +19,7 @@ class ProductServiceTest
 
     DatabaseManager databaseManager = Mockito.mock(DatabaseManager.class);
     ProductService service = new ProductService(databaseManager);
-    Product testProduct = new Product(1, "Splendid", new BigDecimal("9.99"),
+    Product testProduct = new Product(4, "Splendid", new BigDecimal("9.99"),
             "USD", "asd", new ProductCategory("action"), new Supplier("Gmt"), "", "");
 
 
@@ -28,7 +28,7 @@ class ProductServiceTest
         when(databaseManager.getAllProducts()).thenReturn(List.of(testProduct));
         List<Product> result = service.getAllProduct();
         List<Product> actual = new ArrayList<>();
-        actual.add(new Product(1, "Splendid", new BigDecimal("9.99"),
+        actual.add(new Product(4, "Splendid", new BigDecimal("9.99"),
                 "USD", "asd", new ProductCategory("action"), new Supplier("Gmt"), "", ""));
         assertEquals(result.size(), actual.size());
 
@@ -44,6 +44,9 @@ class ProductServiceTest
 
     @Test
     void getProductById() {
+        when(databaseManager.getProductById(4)).thenReturn(testProduct);
+        Product result = service.getProductById(4);
+        assertEquals(result.getId(), testProduct.getId());
     }
 
     @Test
