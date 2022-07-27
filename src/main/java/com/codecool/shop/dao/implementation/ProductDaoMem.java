@@ -34,7 +34,7 @@ public class ProductDaoMem implements ProductDao {
     @Override
     public Product find(int id) {
         try (Connection conn = dataSource.getConnection()) {
-            String sql = "SELECT movie.id, movie.name, url, price, description, img, c.genre, s.name FROM movie JOIN category c on c.id = movie.category_id JOIN supplier s on s.id = movie.supplier_id WHERE movie.id = ?";
+            String sql = "SELECT movie.id, movie.name, url, cast(price as decimal(10, 2)), description, img, c.genre, s.name FROM movie JOIN category c on c.id = movie.category_id JOIN supplier s on s.id = movie.supplier_id WHERE movie.id = ?";
             PreparedStatement st = conn.prepareStatement(sql);
             st.setInt(1, id);
             ResultSet rs = st.executeQuery();
@@ -44,13 +44,13 @@ public class ProductDaoMem implements ProductDao {
             int movieId = rs.getInt(1);
             String name = rs.getString(2);
             String trailer = rs.getString(3);
-            double defaultPrice = rs.getDouble(4);
+            BigDecimal defaultPrice = BigDecimal.valueOf(rs.getDouble(4));
             String description = rs.getString(5);
             String img = rs.getString(6);
             ProductCategory category = new ProductCategory(rs.getString(7));
             Supplier supplier = new Supplier(rs.getString(8));
             String currency = "USD";
-            return new Product(movieId, name, new BigDecimal(defaultPrice), currency, description, category, supplier, trailer, img);
+            return new Product(movieId, name, defaultPrice, currency, description, category, supplier, trailer, img);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
