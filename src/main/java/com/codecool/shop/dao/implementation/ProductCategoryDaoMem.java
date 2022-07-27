@@ -57,7 +57,7 @@ public class ProductCategoryDaoMem implements ProductCategoryDao {
     @Override
     public List<Product> getAllProductByCategory(int id) {
         try (Connection conn = dataSource.getConnection()) {
-            String sql = "SELECT * FROM category JOIN movie m on category.id = m.category_id JOIN supplier s on s.id = m.supplier_id WHERE category.id = ?";
+            String sql = "SELECT *, cast(m.price as decimal(10, 2)) FROM category JOIN movie m on category.id = m.category_id JOIN supplier s on s.id = m.supplier_id WHERE category.id = ?";
             PreparedStatement st = conn.prepareStatement(sql);
             st.setInt(1, id);
             ResultSet rs = st.executeQuery();
