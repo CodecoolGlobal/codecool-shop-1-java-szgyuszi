@@ -2,10 +2,10 @@ package com.codecool.shop.dao;
 
 public interface RegisterDao {
 
-    void registerUser();
+    void registerUser(String name, String email, String password);
 
-    void deleterUser();
+    void deleterUser(int id);
 
-    void updateUser();
+    void updateUser(int id, String newName, String newEmail, String newPassword);
 
 }

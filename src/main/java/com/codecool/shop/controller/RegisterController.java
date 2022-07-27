@@ -19,8 +19,6 @@ public class RegisterController extends HttpServlet {
         TemplateEngine engine = TemplateEngineUtil.getTemplateEngine(req.getServletContext());
         WebContext context = new WebContext(req, resp, req.getServletContext());
 
-
-
         engine.process("register.html", context, resp.getWriter());
     }
 }

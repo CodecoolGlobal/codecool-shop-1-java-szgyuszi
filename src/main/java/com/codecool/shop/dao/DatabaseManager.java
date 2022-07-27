@@ -3,6 +3,7 @@ package com.codecool.shop.dao;
 import com.codecool.shop.config.ReadConfig;
 import com.codecool.shop.dao.implementation.ProductCategoryDaoMem;
 import com.codecool.shop.dao.implementation.ProductDaoMem;
+import com.codecool.shop.dao.implementation.RegisterDaoMem;
 import com.codecool.shop.dao.implementation.SupplierDaoMem;
 import com.codecool.shop.model.Product;
 import com.codecool.shop.model.ProductCategory;
@@ -20,6 +21,8 @@ public class DatabaseManager {
     private ProductCategoryDao productCategoryDao;
     private SupplierDao supplierDao;
 
+    private RegisterDao registerDao;
+
     private static DatabaseManager instance = null;
 
     private DatabaseManager(){
@@ -31,6 +34,7 @@ public class DatabaseManager {
         productDao = new ProductDaoMem(dataSource);
         productCategoryDao = new ProductCategoryDaoMem(dataSource);
         supplierDao = new SupplierDaoMem(dataSource);
+        registerDao = new RegisterDaoMem(dataSource);
     }
 
     private DataSource connect() throws SQLException, IOException {
@@ -76,6 +80,10 @@ public class DatabaseManager {
 
     public List<Product> getAllProductByCategory(int id) {
         return productCategoryDao.getAllProductByCategory(id);
+    }
+
+    public void registerUser(String name, String email, String password){
+        registerDao.registerUser(name, email, password);
     }
 
 

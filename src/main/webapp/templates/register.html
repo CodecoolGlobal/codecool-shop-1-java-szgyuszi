@@ -8,7 +8,7 @@
 <body>
 <div class="container">
 
-    <form id="signup">
+    <form id="signup" action="/save_sign_up" method="post">
 
         <div class="header">
 
@@ -22,11 +22,11 @@
 
         <div class="inputs">
 
-            <input type="text" placeholder="name" autofocus/>
+            <input type="text" name="name" placeholder="name" autofocus/>
 
-            <input type="email" placeholder="e-mail" />
+            <input type="email" name="email" placeholder="e-mail" />
 
-            <input type="password" placeholder="Password"/>
+            <input type="password" name="password" placeholder="Password"/>
 
 
             <div class="checkboxy">
@@ -34,7 +34,7 @@
                 use</label>
             </div>
 
-            <a id="submit" href="#">SIGN UP FOR INVITE NOW</a>
+            <input type="submit" value="register">
 
         </div>
 

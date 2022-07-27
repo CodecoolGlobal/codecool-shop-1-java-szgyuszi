@@ -42,4 +42,8 @@ public class ProductService{
         return databaseManager.getAllProductByCategory(id);
     }
 
+    public void registerUser(String name, String email, String password){
+        databaseManager.registerUser(name, email, password);
+    }
+
 }

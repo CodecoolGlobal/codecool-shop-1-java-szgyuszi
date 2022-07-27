@@ -14,7 +14,8 @@ CREATE TABLE "user"
 (
     id    SERIAL PRIMARY KEY,
     name  VARCHAR NOT NULL,
-    email VARCHAR NOT NULL
+    email VARCHAR NOT NULL,
+    password VARCHAR NOT NULL
 
 );
 
@@ -51,6 +52,7 @@ CREATE TABLE movie
     supplier_id INT              NOT NULL
 
 );
+
 
 ALTER TABLE ONLY orders_movies
     ADD CONSTRAINT fk_order_id FOREIGN KEY (order_id) REFERENCES "order"(id),
