@@ -50,10 +50,16 @@ class ProductServiceTest
     }
 
     @Test
-    void testGetProductById() {
-    }
-
-    @Test
     void getAllProductByCategory() {
+        Product testObject1 = new Product(1, "name", new BigDecimal(10.10), "HUF", "asd", new ProductCategory("action"),
+                new Supplier("Metro"), "", "");
+        Product testObject2 = new Product(2, "moviename", new BigDecimal(9.99), "COR", "asd", new ProductCategory("comedy"),
+                new Supplier("Paramount"), "", "");
+        when(databaseManager.getAllProductByCategory(2)).thenReturn(List.of(testProduct, testObject1));
+        List<Product> result = service.getAllProductByCategory(2);
+        List<Product> actual = new ArrayList<>();
+        actual.add(testObject1);
+        actual.add(testProduct);
+        assertEquals(result, actual);
     }
 }
