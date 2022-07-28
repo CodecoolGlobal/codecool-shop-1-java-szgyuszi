@@ -57,8 +57,7 @@ CREATE TABLE movie
 CREATE TABLE cart
 (
     id   SERIAL PRIMARY KEY,
-    name VARCHAR NOT NULL,
-    price DOUBLE PRECISION,
+    movie_id INT,
     quantity INT,
     user_id INT,
     badge INT
@@ -78,7 +77,9 @@ ALTER TABLE ONLY "movie"
     ADD CONSTRAINT fk_supplier_id FOREIGN KEY (supplier_id) REFERENCES "supplier" (id);
 
 ALTER TABLE ONLY "cart"
-    ADD CONSTRAINT fk_user_id FOREIGN KEY (user_id) REFERENCES "user" (id);
+    ADD CONSTRAINT fk_user_id FOREIGN KEY (user_id) REFERENCES "user" (id),
+    ADD CONSTRAINT fk_movie_id FOREIGN KEY (movie_id) REFERENCES "movie" (id);
+
 
 INSERT INTO category
 VALUES (1, 'horror');

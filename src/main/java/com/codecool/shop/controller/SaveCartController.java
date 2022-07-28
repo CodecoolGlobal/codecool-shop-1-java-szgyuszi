@@ -23,13 +23,11 @@ public class SaveCartController extends HttpServlet {
 
         String s = extractPostRequestBody(request);
         JsonObject jsonObject = new Gson().fromJson(s, JsonObject.class);
-        String name = jsonObject.get("name").getAsString();
         int id = Integer.parseInt(jsonObject.get("id").getAsString());
-        double price = Double.parseDouble(jsonObject.get("price").getAsString());
         int quantity = Integer.parseInt(jsonObject.get("quantity").getAsString());
         int userId = Integer.parseInt(jsonObject.get("userId").getAsString());
         int badge = Integer.parseInt(jsonObject.get("badge").getAsString());
-        productService.saveCart(name, price, id, quantity, userId, badge);
+        productService.saveCart(id, quantity, userId, badge);
 
     }
      String extractPostRequestBody(HttpServletRequest request) throws IOException {

@@ -5,6 +5,7 @@ initCart();
 function initCart() {
     initAddToCart()
     addEventToCart()
+    loadCart()
 }
 
 
@@ -24,8 +25,9 @@ function initAddToCart(){
 async function initAddMovie(id){
     document.querySelector('#place-holder').innerHTML = "";
     let product = await getProduct(id)
-    console.log(product)
+
     const newProduct = {...product, userId: 1, quantity: 1}
+
     saveProductDetailsToMemory(newProduct)
 
 
@@ -47,19 +49,17 @@ function addEventToCart() {
     })
 }
 
-async function saveProductDetailsToMemory({name, price, id, quantity, userId}) {
+async function saveProductDetailsToMemory(product) {
     const badge = document.querySelector('#s-c-badge').textContent;
-    const cart = {
-        name, price, id, quantity, userId, badge
-    }
-    console.table(cart)
+    const carte = {...product, badge}
+    console.table(carte)
     const response = await fetch("/save_cart", {
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
         },
         method: "POST",
-        body: JSON.stringify(cart),
+        body: JSON.stringify(carte),
     });
     if (response.ok) {
         alert("Cart saved");
@@ -85,4 +85,10 @@ function modifyCartBadge(button) {
         const badgeContent = parseInt(document.querySelector('#s-c-badge').textContent);
         badge.textContent = `${badgeContent+1}`
     })
+}
+
+async function loadCart() {
+    const response = await fetch("/load_cart");
+    const cart = await response.json();
+    cartFactory(cart)
 }

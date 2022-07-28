@@ -1,6 +1,7 @@
 package com.codecool.shop.service;
 
 import com.codecool.shop.dao.DatabaseManager;
+import com.codecool.shop.model.Cart;
 import com.codecool.shop.model.Product;
 import com.codecool.shop.model.ProductCategory;
 import com.codecool.shop.model.Supplier;
@@ -45,8 +46,12 @@ public class ProductService{
         databaseManager.registerUser(name, email, password);
     }
 
-    public void saveCart(String name, double price, int id, int quantity, int userId, int badge) {
-        databaseManager.saveCart(name,  price,  id,  quantity,  userId, badge);
+    public void saveCart(int movie_id, int quantity, int userId, int badge) {
+        databaseManager.saveCart(movie_id,  quantity,  userId, badge);
+    }
+
+    public Cart loadCart(int userId) {
+        return databaseManager.loadCart(userId);
     }
 
 }
