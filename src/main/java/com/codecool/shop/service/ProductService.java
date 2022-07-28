@@ -30,7 +30,6 @@ public class ProductService{
     }
 
     public Product getProductById(int id) {
-        System.out.println("bemegy");
         return databaseManager.getProductById(id);
     }
 
@@ -44,6 +43,10 @@ public class ProductService{
 
     public void registerUser(String name, String email, String password){
         databaseManager.registerUser(name, email, password);
+    }
+
+    public void saveCart(String name, double price, int id, int quantity, int userId) {
+        databaseManager.saveCart(name,  price,  id,  quantity,  userId);
     }
 
 }
