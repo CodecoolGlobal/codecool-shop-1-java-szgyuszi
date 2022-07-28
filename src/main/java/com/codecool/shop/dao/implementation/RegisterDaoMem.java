@@ -23,12 +23,15 @@ public class RegisterDaoMem implements RegisterDao {
     @Override
     public void registerUser(String name, String email, String password) {
         try (Connection conn = dataSource.getConnection()) {
-            String sql = "INSERT INTO \"user\" (\"name\", email, password) VALUES (?, ?, ?)";
+            String sql = "INSERT INTO \"user\" (name, email, password) VALUES (?, ?, ?)";
             PreparedStatement st = conn.prepareStatement(sql);
 
             st.setString(1, name);
             st.setString(2, email);
             st.setString(3, password);
+
+            st.executeUpdate();
+
 
         } catch (SQLException e) {
             throw new RuntimeException(e);

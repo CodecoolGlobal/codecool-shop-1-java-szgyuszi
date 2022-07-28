@@ -26,7 +26,7 @@ public class SaveUserPersonalDataController extends HttpServlet {
         String password = request.getParameter("password");
         productService.registerUser(name, email, password);
 
-        out.close();
+        response.sendRedirect("/");
 
 
 
