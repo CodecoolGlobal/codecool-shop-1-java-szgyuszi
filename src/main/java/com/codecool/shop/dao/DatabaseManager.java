@@ -86,8 +86,8 @@ public class DatabaseManager {
         registerDao.registerUser(name, email, password);
     }
 
-    public void saveCart(String name, double price, int id, int quantity, int userId){
-        saveCartDao.saveCart(name, price, id, quantity, userId);
+    public void saveCart(String name, double price, int id, int quantity, int userId, int badge){
+        saveCartDao.saveCart(name, price, id, quantity, userId, badge);
     }
 
 

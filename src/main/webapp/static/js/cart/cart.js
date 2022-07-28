@@ -5,7 +5,6 @@ initCart();
 function initCart() {
     initAddToCart()
     addEventToCart()
-    addEventToCheckout()
 }
 
 
@@ -47,15 +46,20 @@ function addEventToCart() {
     })
 }
 
-function saveProductDetailsToMemory({name, price, id}) {
+async function saveProductDetailsToMemory({name, price, id, quantity, userId, badge}) {
 
-    const product = {
-        name: name,
-        price: price,
-        id: id,
-        quantity: 1,
+    const cart = {
+        name, price, id, quantity, userId, badge
     }
-    window.localStorage.setItem('product', JSON.stringify(product))
+    const response = await fetch(`/save_cart`, {
+        method: "POST",
+        body: cart,
+    });
+    if (response.ok) {
+        alert("Cart saved");
+    }
+
+
 }
 
 function addEventToClosingModal(product) {

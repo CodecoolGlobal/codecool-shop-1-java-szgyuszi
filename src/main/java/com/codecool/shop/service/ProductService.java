@@ -45,8 +45,8 @@ public class ProductService{
         databaseManager.registerUser(name, email, password);
     }
 
-    public void saveCart(String name, double price, int id, int quantity, int userId) {
-        databaseManager.saveCart(name,  price,  id,  quantity,  userId);
+    public void saveCart(String name, double price, int id, int quantity, int userId, int badge) {
+        databaseManager.saveCart(name,  price,  id,  quantity,  userId, badge);
     }
 
 }

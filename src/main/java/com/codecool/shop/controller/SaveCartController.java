@@ -23,9 +23,10 @@ public class SaveCartController extends HttpServlet {
         double price = Double.parseDouble(request.getParameter("price"));
         int id = Integer.parseInt(request.getParameter("id"));
         int quantity = Integer.parseInt(request.getParameter("quantity"));
+        int badge = Integer.parseInt(request.getParameter("badge"));
         HttpSession session = request.getSession();
         int user_id = (int) session.getAttribute("user_id");
-        productService.saveCart(name, price, id, quantity, user_id);
+        productService.saveCart(name, price, id, quantity, user_id, badge);
         response.setStatus(201);
     }
 }

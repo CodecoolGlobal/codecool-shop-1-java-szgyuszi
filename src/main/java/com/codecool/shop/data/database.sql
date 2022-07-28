@@ -3,6 +3,7 @@ DROP TABLE IF EXISTS "user" CASCADE;
 DROP TABLE IF EXISTS "order" CASCADE;
 DROP TABLE IF EXISTS supplier CASCADE;
 DROP TABLE IF EXISTS movie CASCADE;
+DROP TABLE IF EXISTS cart CASCADE;
 DROP TABLE IF EXISTS orders_movies CASCADE;
 
 CREATE TABLE category
@@ -59,7 +60,8 @@ CREATE TABLE cart
     name VARCHAR NOT NULL,
     price DOUBLE PRECISION,
     quantity INT,
-    user_id INT
+    user_id INT,
+    badge INT
 
 );
 
