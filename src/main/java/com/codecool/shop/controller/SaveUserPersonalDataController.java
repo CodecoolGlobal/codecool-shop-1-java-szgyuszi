@@ -18,7 +18,6 @@ public class SaveUserPersonalDataController extends HttpServlet {
             throws ServletException, IOException {
         ProductService productService = new ProductService(DatabaseManager.getInstance());
         response.setContentType("text/html");
-        PrintWriter out = response.getWriter();
         request.getRequestDispatcher("register.html").include(request, response);
 
         String name = request.getParameter("name");

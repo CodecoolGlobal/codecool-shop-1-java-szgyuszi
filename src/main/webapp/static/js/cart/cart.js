@@ -24,8 +24,9 @@ function initAddToCart(){
 async function initAddMovie(id){
     document.querySelector('#place-holder').innerHTML = "";
     let product = await getProduct(id)
-    addEventToClosingModal(product)
-    saveProductDetailsToMemory(product)
+    console.log(product)
+    const newProduct = {...product, userId: 1, quantity: 1}
+    saveProductDetailsToMemory(newProduct)
 
 
 }
@@ -46,14 +47,19 @@ function addEventToCart() {
     })
 }
 
-async function saveProductDetailsToMemory({name, price, id, quantity, userId, badge}) {
-
+async function saveProductDetailsToMemory({name, price, id, quantity, userId}) {
+    const badge = document.querySelector('#s-c-badge').textContent;
     const cart = {
         name, price, id, quantity, userId, badge
     }
-    const response = await fetch(`/save_cart`, {
+    console.table(cart)
+    const response = await fetch("/save_cart", {
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
         method: "POST",
-        body: cart,
+        body: JSON.stringify(cart),
     });
     if (response.ok) {
         alert("Cart saved");

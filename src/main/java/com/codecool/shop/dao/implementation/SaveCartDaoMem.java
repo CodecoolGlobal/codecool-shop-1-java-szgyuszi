@@ -15,9 +15,9 @@ public class SaveCartDaoMem implements SaveCartDao {
     }
 
     @Override
-    public void saveCart(String name, double price, int id, int quantity, int userId) {
+    public void saveCart(String name, double price, int id, int quantity, int userId, int badge) {
         try (Connection conn = dataSource.getConnection()) {
-            String sql = "INSERT INTO cart (name, price, id, quantity, userId) VALUES (?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO cart (name, price, id, quantity, user_id, badge) VALUES (?, ?, ?, ?, ?, ?)";
             PreparedStatement st = conn.prepareStatement(sql);
 
             st.setString(1, name);
@@ -25,6 +25,8 @@ public class SaveCartDaoMem implements SaveCartDao {
             st.setInt(3, id);
             st.setInt(4, quantity);
             st.setInt(5, userId);
+            st.setInt(6, badge);
+
 
             st.executeUpdate();
 
