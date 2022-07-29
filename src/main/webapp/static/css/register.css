@@ -1,15 +1,11 @@
 body {
-    /*background-image: url(http://kreativo.se/backlogin.jpg);*/
     background-image: url("https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
-
-
-    font-family: "Helvetica Neue", Helvetica, Arial;
-    padding-top: 70px;
     height: 100%;
-
-    background-position: center ;
+    margin-top: 24vh;
+    background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    background-color: black;
 }
 
 .container {
@@ -19,11 +15,11 @@ body {
 }
 
 #signup {
-    padding: 0px 25px 25px;
+    padding: 0 25px 25px;
     background: #fff;
     box-shadow:
-            0px 0px 0px 5px rgba( 255,255,255,0.4 ),
-            0px 4px 20px rgba( 0,0,0,0.33 );
+            0 0 0 5px rgba( 255,255,255,0.4 ),
+            0 4px 20px rgba( 0,0,0,0.33 );
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
     border-radius: 5px;
@@ -90,9 +86,9 @@ input:-moz-placeholder {
     clear: both;
 }
 
-#signup .inputs input[type=email]:focus, input[type=password]:focus {
+#signup .inputs input[type=email]:focus, input[type=password]:focus, input[type=text]:focus {
     background: #fff;
-    box-shadow: 0px 0px 0px 3px #fff38e, inset 0px 2px 3px rgba( 0,0,0,0.2 ), 0px 5px 5px rgba( 0,0,0,0.15 );
+    box-shadow: 0px 0px 0px 3px rgba(49, 49, 49, 0.4), inset 0px 2px 3px rgba( 0,0,0,0.2 ), 0px 5px 5px rgba( 0,0,0,0.15 );
     outline: none;
 }
 
@@ -116,52 +112,18 @@ input:-moz-placeholder {
     font-style: italic;
 }
 
-#signup .inputs #submit {
-    width: 100%;
-    margin-top: 20px;
-    padding: 15px 0;
-    color: #fff;
-    font-size: 14px;
-    font-weight: 500;
-    letter-spacing: 1px;
-    text-align: center;
-    text-decoration: none;
-    background: -moz-linear-gradient(
-            top,
-            #b9c5dd 0%,
-            #a4b0cb);
-    background: -webkit-gradient(
-            linear, left top, left bottom,
-            from(#b9c5dd),
-            to(#a4b0cb));
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
-    border: 1px solid #737b8d;
-    -moz-box-shadow:
-            0px 5px 5px rgba(000,000,000,0.1),
-            inset 0px 1px 0px rgba(255,255,255,0.5);
-    -webkit-box-shadow:
-            0px 5px 5px rgba(000,000,000,0.1),
-            inset 0px 1px 0px rgba(255,255,255,0.5);
-    box-shadow:
-            0px 5px 5px rgba(000,000,000,0.1),
-            inset 0px 1px 0px rgba(255,255,255,0.5);
-    text-shadow:
-            0px 1px 3px rgba(000,000,000,0.3),
-            0px 0px 0px rgba(255,255,255,0);
-    display: table;
-    position: static;
-    clear: both;
-}
 
-#signup .inputs #submit:hover {
-    background: -moz-linear-gradient(
-            top,
-            #a4b0cb 0%,
-            #b9c5dd);
-    background: -webkit-gradient(
-            linear, left top, left bottom,
-            from(#a4b0cb),
-            to(#b9c5dd));
+#btn-register {
+    font-size: 1rem;
+    outline: none;
+    background-color: #428bca;
+    color: #dedcdc;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+#btn-register:hover {
+    background-color: #4a9be3;
+    transition: .3s ease-in-out;
 }
